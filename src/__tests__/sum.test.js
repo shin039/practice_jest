@@ -6,8 +6,14 @@ import {sum} from '../sum/sum';
 // -----------------------------------------------------------------------------
 // Basic Test Case
 // -----------------------------------------------------------------------------
-describe("■ テストケース", () =>  test('add 1 + 2 to equal 3', () => expect(sum(1, 2)).toBe(3) ) );
-describe("■ TODO"        , () =>  test.todo("TODO を実装できる。")                               );
+describe("■ テストケース", () => {
+  test        ('add 1 + 2 to equal 3'    , () => expect(sum(1, 2))    .toBe(3) )
+  test        ('add 1 + 2 to not equal 4', () => expect(sum(1, 2)).not.toBe(4) )
+  test.failing('add 1 + 2 to not equal 5', () => expect(sum(1, 2))    .toBe(5) )
+
+  test('resolve toBe'   , () => expect(Promise.resolve('resolved')           ).resolves.toBe   ('resolved') )
+  test('reject  toThrow', () => expect(Promise.reject(new Error('rejected')) ).rejects .toThrow('rejected') )
+});
 
 // -----------------------------------------------------------------------------
 // Parametalized Test
@@ -23,8 +29,9 @@ describe("■ パラメタライズド テスト", () => {
 });
 
 // -----------------------------------------------------------------------------
-// Skip Test Case
+// Another function
 // -----------------------------------------------------------------------------
+describe     ("■ TODO"        , () =>  test.todo("TODO を実装できる。"));
 describe.skip("■ テストをスキップ pt.1", () => { test.todo("テストをスキップできる"); });
 xdescribe    ("■ テストをスキップ pt.2", () => { test.todo("テストをスキップできる!"); });
 
