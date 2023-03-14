@@ -8,6 +8,7 @@ import {sum} from '../sum/sum';
 // -----------------------------------------------------------------------------
 describe("■ テストケース", () => {
   test        ('add 1 + 2 to equal 3'    , () => expect(sum(1, 2))    .toBe(3) )
+  it          ('it is alias of test'     , () => expect(sum(1, 2))    .toBe(3) )
   test        ('add 1 + 2 to not equal 4', () => expect(sum(1, 2)).not.toBe(4) )
   test.failing('add 1 + 2 to not equal 5', () => expect(sum(1, 2))    .toBe(5) )
 
