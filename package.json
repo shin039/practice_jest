@@ -6,7 +6,8 @@
   "main": "index.js",
   "author": "",
   "scripts": {
-    "test" : "jest --watchAll"
+    "test"   : "jest --watch",
+    "testall": "jest --watchAll"
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
